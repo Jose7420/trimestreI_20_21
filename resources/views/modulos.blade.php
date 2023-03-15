@@ -21,7 +21,7 @@
 
 
                         <tr>
-                            <th>{{$modulo->nombre}}</th>
+                            <th><a href="{{url('/modulos/edit/'.$modulo->id)}}" >{{$modulo->nombre}}</a></th>
                             <th>{{$modulo->especialidad_id}}</th>
                             <th>{{$modulo->ciclo_id}}</th>
                         </tr>

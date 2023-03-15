@@ -20,4 +20,9 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/modulos', [ModulosController::class,'Index']);
+Route::get('/modulos', [ModulosController::class,'index']);
+
+Route::get('/modulos/edit/{id}', [ModulosController::class, 'getEdit']);
+
+Route::put('/modulos/edit/{request}',[ModulosController::class, 'putEdit']);
+
