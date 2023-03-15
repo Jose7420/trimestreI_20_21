@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Schema;
 use App\Models\Ciclo;
 use App\Models\Especialidad;
 use App\Models\Modulo;
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
@@ -28,6 +29,11 @@ class DatabaseSeeder extends Seeder
 
         self::seedModulos();
         $this->command->info('Tabla productos inicializada con datos!');
+
+        self::seedUsers();
+        $this->command->info('Tabla productos inicializada con datos!');
+
+
 
 
 
@@ -81,6 +87,17 @@ class DatabaseSeeder extends Seeder
              }
 
         }
+    }
+
+    public static function seedUsers(){
+
+        User::truncate();
+        DB::table('users')->insert([
+
+            'name'=>'JoseJ',
+            'email'=> "7962446@alu.murciaeduca.es",
+            'password'=>bcrypt('1234'),
+        ]);
     }
 
 

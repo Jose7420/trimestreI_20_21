@@ -24,5 +24,5 @@ Route::get('/modulos', [ModulosController::class,'index']);
 
 Route::get('/modulos/edit/{id}', [ModulosController::class, 'getEdit']);
 
-Route::put('/modulos/edit/{request}',[ModulosController::class, 'putEdit']);
+Route::put('/modulos/edit/{request}',[ModulosController::class, 'putEdit'])->middleware(['auth']);
 
